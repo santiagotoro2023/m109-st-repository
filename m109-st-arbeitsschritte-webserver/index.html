@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meine Git-Arbeitsschritte</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f1f8e9, #ffffff);
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #558b2f;
+      color: white;
+      animation: fadeInDown 1s ease-out;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .step {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease;
+    }
+    .step:hover {
+      transform: scale(1.02);
+    }
+    .step img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      padding: 1rem;
+      background: #f7f7f7;
+    }
+    .step-content {
+      padding: 1rem;
+    }
+    .step-content h3 {
+      margin-top: 0;
+      color: #33691e;
+    }
+    code {
+      background: #e0e0e0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eeeeee;
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Git-Arbeitsschritte auf Ubuntu</h1>
+    <p>Dokumentation von Santiago Toro</p>
+  </header>
+
+  <section class="steps">
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Terminal Update">
+      <div class="step-content">
+        <h3>System aktualisieren</h3>
+        <p>Befehl im Terminal:</p>
+        <code>sudo apt update && sudo apt upgrade -y</code>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Installation">
+      <div class="step-content">
+        <h3>Git installieren</h3>
+        <p>Befehl im Terminal:</p>
+        <code>sudo apt install git-all</code>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Ordner erstellen">
+      <div class="step-content">
+        <h3>Projektordner erstellen</h3>
+        <p>Ordnername: <code>m109-st-repo</code></p>
+        <code>mkdir m109-st-repo</code>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Repo">
+      <div class="step-content">
+        <h3>GitHub Repository</h3>
+        <p>Online erstellt über die GitHub-WebGUI mit dem gleichen Namen.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Remote verbinden">
+      <div class="step-content">
+        <h3>Remote verbinden</h3>
+        <p>GitHub-Repository mit lokalem Ordner verbinden:</p>
+        <code>git remote add origin https://github.com/santiagotoro2023/m109-repo-st.git</code>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721275.png" alt="Index HTML">
+      <div class="step-content">
+        <h3>HTML-Datei erstellen</h3>
+        <p>Eine <code>index.html</code>-Datei wurde im Projektordner angelegt.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/8297/8297136.png" alt="SSH Verbindung">
+      <div class="step-content">
+        <h3>Verbindung via SSH</h3>
+        <p>Die Arbeit erfolgte auf einer Ubuntu-VM über SSH mit der App <strong>Termius</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 – Git-Doku von Santiago Toro
+  </footer>
+</body>
+</html>
