@@ -1,7 +1,7 @@
-FROM nginxinc/nginx-unprivileged
+FROM nginxinc/nginx-unprivileged:alpine
 
-COPY index.html /usr/share/nginx/html/
+# Port 8080 freigeben
+EXPOSE 8080
 
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# index.html ins Verzeichnis kopieren
+COPY index.html /usr/share/nginx/html/index.html
