@@ -1,5 +1,5 @@
 
-# Kubernetes und OpenShift Konfigurationen
+# Kubernetes / OpenShift Konfigurationen
 
 In diesem Dokument wird erläutert, wie du Kubernetes-Ressourcen wie **Deployment**, **Service**, **ConfigMap**, **Secrets**, **Routes** und deren Interaktionen mit Labels konfigurierst. Zudem beschreiben wir, wie man die Konfigurationen mit dem **OpenShift CLI (oc)** umsetzt. 🚀
 
