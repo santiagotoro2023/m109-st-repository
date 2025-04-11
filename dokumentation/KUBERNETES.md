@@ -3,6 +3,8 @@
 
 In diesem Dokument wird erläutert, wie du Kubernetes-Ressourcen wie **Deployment**, **Service**, **ConfigMap**, **Secrets**, **Routes** und deren Interaktionen mit Labels konfigurierst. Zudem beschreiben wir, wie man die Konfigurationen mit dem **OpenShift CLI (oc)** umsetzt. 🚀
 
+![Description](./content/M109_Darstellung_Manifests_ST_2025-1.png)
+
 ## 1. Deployment
 
 Ein Kubernetes **Deployment** stellt sicher, dass eine bestimmte Anzahl von Pods gleichzeitig ausgeführt wird und ermöglicht einfache Rollouts und Skalierungen.
