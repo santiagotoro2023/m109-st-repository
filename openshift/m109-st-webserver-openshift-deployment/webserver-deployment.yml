@@ -1,0 +1,59 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: html-openshift-app
+  labels:
+    app: html-openshift-app
+    app.kubernetes.io/part-of: html-openshift-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: html-openshift-app
+  template:
+    metadata:
+      labels:
+        app: html-openshift-app
+    spec:
+      containers:
+      - name: html-openshift-app
+        image: santiagotoro2023/m109-st-webserver-openshift:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: html-openshift-app
+  labels:
+    app: html-openshift-app
+    app.kubernetes.io/part-of: html-openshift-app
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+  selector:
+    app: html-openshift-app
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: html-openshift-app
+  labels:
+    app: html-openshift-app
+    app.kubernetes.io/part-of: html-openshift-app
+spec:
+  to:
+    kind: Service
+    name: html-openshift-app
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
