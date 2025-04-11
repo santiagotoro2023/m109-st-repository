@@ -1,0 +1,1 @@
+ mariadb -uroot -padmin < /tmp/populate_table_quotes_POWERSHELL.sql

@@ -1,0 +1,1 @@
+ mariadb -uroot -padmin < /tmp/create_table_quotes.sql

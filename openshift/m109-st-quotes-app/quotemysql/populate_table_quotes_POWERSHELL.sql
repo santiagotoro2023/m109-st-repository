@@ -1,0 +1,7 @@
+USE quotesdb;
+LOAD DATA INFILE '/tmp/quotes.csv'
+INTO TABLE quotes
+FIELDS TERMINATED BY '|'
+ENCLOSED BY '"'
+ESCAPED BY '"'
+LINES TERMINATED BY '\n';
