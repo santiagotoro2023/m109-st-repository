@@ -32,7 +32,7 @@ Cloud Computing umfasst die Bereitstellung von Computerdienstleistungen über da
 - ⚙️ **FaaS (Function as a Service)** – geringste Kontrolle
 - 🖥️ **SaaS (Software as a Service)** – z. B. Google Kubernetes Engine (GKS)
 - 🌐 **PaaS (Platform as a Service)** – z. B. Heroku
-- 🖧 **IaaS (Infrastructure as a Service)** – größte Kontrolle / virtueller Server ohne Betriebssystem
+- 🖧 **IaaS (Infrastructure as a Service)** – grösste Kontrolle / virtueller Server ohne Betriebssystem
 
 ## Container-Runtime-Engines:
 - 🐳 **Docker**
