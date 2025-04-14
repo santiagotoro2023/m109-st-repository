@@ -16,14 +16,17 @@ spec:
       - name: counter-database
         image: registry.redhat.io/rhel8/postgresql-15:latest
         ports:
-        - containerPort: 5432
+          - containerPort: 5432
+        volumeMounts:
+          - name: counter-database-data
+            mountPath: /var/lib/pgsql/data
         env:
           - name: POSTGRESQL_USER
             valueFrom:
               secretKeyRef:
                 name: counter-database
                 key: database-user
-          - name:  POSTGRESQL_PASSWORD
+          - name: POSTGRESQL_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: counter-database
@@ -33,3 +36,7 @@ spec:
               secretKeyRef:
                 name: counter-database
                 key: database-name
+      volumes:
+        - name: counter-database-data
+          persistentVolumeClaim:
+            claimName: counter-database-data
