@@ -10,4 +10,7 @@ Willkommen zur Dokumentation für mein Cloud Computing Projekt. Diese Sammlung v
 2. **[Kubernetes Konfiguration 🛠️](./KUBERNETES.md)**  
    Eine Beschreibung der Konfigurationsdateien, die für einen Kubernetes-Aufbau benötigt werden. 📦
 
+3. **[Informationen zu Aufgaben 📝](../exercises)**
+   Für Informationen zu den Ordnern und Inhalten der Aufgaben, wurde im exercises/ eine README.md Angelegt 🧠.
+
 # 🙌 Viel Erfolg! 🦆
