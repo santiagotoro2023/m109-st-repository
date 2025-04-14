@@ -7,17 +7,14 @@ Das Modul vermittelt praxisnah den Betrieb und die Überwachung von Cloud-Dienst
 
 Die einzelnen Ordner repräsentieren die verschiedenen Themenblöcke und Aufgaben des Moduls:
 
-- **`einleitung/`**  
-  Enthält eine Einführung in das Modul sowie eine Website zur Übersicht über die Kursinhalte.
-
-- **`docker/`**  
+- **`exercises/`**  
   Beinhaltet Übungen zur Containerisierung von Anwendungen mit Docker, einschliesslich Erstellung und Verwaltung von Docker-Images.
 
-- **`kubernetes/`**  
-  Enthält Projekte zur Orchestrierung von Containern mit Kubernetes, beispielsweise die Bereitstellung von Redis in einem Kubernetes-Pod.
+- **`documentation/`**
+  Beinhaltet die ausgeschriebenen Dokumentationen für alle Themen welche im Kurs behandelt werden.
 
-- **`openshift/`**  
-  Dokumentiert die Arbeit mit der OpenShift-Plattform, einschliesslich der Einrichtung von Projekten und der Verwaltung von Anwendungen.
+- **`exercises/<subfolder>`**
+  Alle Aufgaben, welche im Verlaufe des Kurses erstellt und bearbeitet wurden, sind in den Unterverzeichnissen des exercises/ Ordners zu finden.
 
 ## 🎯 Ziel des Moduls
 
