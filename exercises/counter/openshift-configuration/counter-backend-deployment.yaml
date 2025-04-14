@@ -35,6 +35,11 @@ spec:
                 key: database-name
           - name: DB_HOST
             valueFrom:
-              secretKeyRef:
-                name: counter-database
-                key: database-host
+              configMapKeyRef:
+                name: counter-config
+                key: DB_HOST
+          - name: npm_config_cache
+            valueFrom:
+              configMapKeyRef:
+                name: counter-config
+                key: npm_config_cache

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: counter-config
+data:
+  DB_HOST: counter-database
+  npm_config_cache: ./.npm-cache
