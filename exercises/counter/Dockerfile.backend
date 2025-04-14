@@ -1,0 +1,60 @@
+# Use Node.js 19 on Alpine Linux for AMD64 architecture
+FROM node:19-alpine
+
+############################################
+# General Docker image configuration
+############################################
+# Set the working directory in the container
+WORKDIR /srv/app
+
+# Expose port 8080 for the application
+EXPOSE 8080
+
+# Set the entrypoint script for the container
+ENTRYPOINT ["entrypoints/production.sh"]
+
+# Default command to start the application
+CMD ["npm", "start"]
+
+############################################
+# System Dependencies
+############################################
+# Update package index and install necessary system packages
+RUN apk update && apk add --no-cache dos2unix
+
+############################################
+# Setup non-root user
+############################################
+# Copy application files to the container
+COPY ["app/backend/package*.json", "./"]
+COPY ["app/backend/config", "config"]
+COPY ["app/backend/src", "src"]
+COPY ["app/backend/entrypoints", "entrypoints"]
+
+# Change ownership of application directory to the non-root user
+RUN chown -R node:node /srv/app
+
+# Switch to non-root user
+USER node
+
+############################################
+# Build Application
+############################################
+# Install npm dependencies
+RUN npm install
+
+# Convert entrypoint scripts to Unix format
+RUN dos2unix entrypoints/*
+
+############################################
+# Adjust permissions for non-root user
+############################################
+# Switch to root user to adjust permissions
+USER root
+
+# Add non-root user to the root group and grant group write permissions
+RUN chgrp -R 0 /srv/app && \
+    chmod -R g=u /srv/app
+
+# Switch back to non-root user
+USER node

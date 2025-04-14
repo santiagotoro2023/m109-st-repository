@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter-backend
+  template:
+    metadata:
+      labels:
+        app: counter-backend
+    spec:
+      containers:
+      - name: counter-backend
+        image: santiagotoro2023/m109-st-counter-backend:0.1
+        ports:
+          - containerPort: 8080
+        env:
+          - name: POSTGRESQL_USER
+            valueFrom:
+              secretKeyRef:
+                name: counter-database
+                key: database-user
+          - name: POSTGRESQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: counter-database
+                key: database-password
+          - name: POSTGRESQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: counter-database
+                key: database-name
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: counter-database
+                key: database-host

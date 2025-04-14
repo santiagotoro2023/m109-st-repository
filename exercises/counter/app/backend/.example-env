@@ -1,0 +1,13 @@
+# -----------------------------------------------------------------------------
+# Secrets are stored here.
+# -----------------------------------------------------------------------------
+NODE_ENV=development
+
+# Database Information
+DB_HOST=localhost
+DB_NAME=database
+DB_USER=postgres
+DB_PASSWORD=password
+
+# Test Secret
+PASSPHRASE=secret

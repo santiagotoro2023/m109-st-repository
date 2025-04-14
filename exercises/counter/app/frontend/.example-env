@@ -1,0 +1,13 @@
+# -----------------------------------------------------------------------------
+# Secrets are stored here.
+# -----------------------------------------------------------------------------
+
+# React Dev Port
+PORT=3100
+GENERATE_SOURCEMAP=false #https://stackoverflow.com/questions/36051891/esri-failed-to-parse-source-map
+
+BACKEND_URL=http://localhost:8080
+
+# Further details regarding the build app
+REACT_APP_VERSION=1.0.0
+REACT_APP_NAME=$npm_package_name
