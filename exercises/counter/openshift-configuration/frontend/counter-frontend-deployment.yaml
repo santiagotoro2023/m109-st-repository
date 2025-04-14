@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter-frontend
+  template:
+    metadata:
+      labels:
+        app: counter-frontend
+    spec:
+      containers:
+      - name: counter-backend
+        image: santiagotoro2023/m109-st-counter-frontend:0.1
+        ports:
+          - containerPort: 3000
+        env:
+          - name: BACKEND_URL
+            valueFrom:
+              configMapKeyRef:
+                name: counter-frontend-config
+                key: BACKEND_URL
+          - name: npm_config_cache
+            value: ./.npm-cache

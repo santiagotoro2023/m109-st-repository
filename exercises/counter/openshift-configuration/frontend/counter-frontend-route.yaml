@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: counter-frontend
+  labels:
+    app: counter-frontend
+spec:
+  to:
+    kind: Service
+    name: counter-frontend
+  port:
+    targetPort: 3000
