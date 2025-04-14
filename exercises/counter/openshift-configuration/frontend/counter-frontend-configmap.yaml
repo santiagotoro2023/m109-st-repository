@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: counter-frontend-config
 data:
-  BACKEND_URL: http://counter-backend-254198-santor.apps.exoscale-ch-gva-2-0.appuio.cloud
+  BACKEND_URL: https://counter-backend-254198-santor.apps.exoscale-ch-gva-2-0.appuio.cloud
