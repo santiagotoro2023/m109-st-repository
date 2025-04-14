@@ -7,13 +7,13 @@ Das Modul vermittelt praxisnah den Betrieb und die Überwachung von Cloud-Dienst
 
 Die einzelnen Ordner repräsentieren die verschiedenen Themenblöcke und Aufgaben des Moduls:
 
-- **`exercises/`**  
+- [**`exercises/`**](./exercises/)  
   Beinhaltet Übungen zur Containerisierung von Anwendungen mit Docker, einschliesslich Erstellung und Verwaltung von Docker-Images.
 
-- **`documentation/`**
+- [**`documentation/`**](./documentation/)
   Beinhaltet die ausgeschriebenen Dokumentationen für alle Themen welche im Kurs behandelt werden.
 
-- **`exercises/<subfolder>`**
+- [**`exercises/<subfolder>`**](./exercises/)
   Alle Aufgaben, welche im Verlaufe des Kurses erstellt und bearbeitet wurden, sind in den Unterverzeichnissen des exercises/ Ordners zu finden.
 
 ## 🎯 Ziel des Moduls
