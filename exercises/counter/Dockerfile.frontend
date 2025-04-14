@@ -1,0 +1,63 @@
+# Use Node.js 19 on Alpine Linux for AMD64 architecture
+FROM node:19-alpine
+
+############################################
+# General Docker image configuration
+############################################
+# Set the working directory in the container
+WORKDIR /srv/app
+
+# Expose port 3000 for the application
+EXPOSE 3000
+
+# Default command to start the application
+CMD ["npm", "run", "start"]
+
+# Entry point script for the container
+ENTRYPOINT ["./entrypoint.sh"]
+
+############################################
+# Install system dependencies
+############################################
+# Update package index and install necessary system packages
+RUN apk update && apk add --no-cache gettext dos2unix
+
+############################################
+# Setup non-root user
+############################################
+# Change ownership of application directory to the non-root user
+RUN chown -R node:node /srv/app
+
+# Switch to non-root user
+USER node
+
+# Copy application files and set correct ownership
+COPY --chown=node:node ["app/frontend/package*.json", "./"]
+COPY --chown=node:node ["app/frontend/entrypoint.sh", "./entrypoint.sh"]
+COPY --chown=node:node ["app/frontend/public", "public"]
+COPY --chown=node:node ["app/frontend/src", "src"]
+
+############################################
+# Build application
+############################################
+# Install npm dependencies
+RUN npm install
+
+# Build the application
+RUN npm run build
+
+# Convert entrypoint script to Unix format
+RUN dos2unix entrypoint.sh
+
+############################################
+# Adjust permissions for non-root user
+############################################
+# Switch to root user to adjust permissions
+USER root
+
+# Add non-root user to the root group and grant group write permissions
+RUN chgrp -R 0 /srv/app && \
+    chmod -R g=u /srv/app
+
+# Switch back to non-root user
+USER node
